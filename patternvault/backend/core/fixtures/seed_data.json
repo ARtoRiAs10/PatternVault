@@ -1,0 +1,245 @@
+[
+  {"model": "core.topic", "pk": 1, "fields": {"name": "DP on Strings", "parent_category": "DP"}},
+  {"model": "core.topic", "pk": 2, "fields": {"name": "Dijkstra", "parent_category": "GRAPH"}},
+  {"model": "core.topic", "pk": 3, "fields": {"name": "DSU", "parent_category": "GRAPH"}},
+  {"model": "core.topic", "pk": 4, "fields": {"name": "Two Pointers", "parent_category": "LINEAR_DS"}},
+  {"model": "core.topic", "pk": 5, "fields": {"name": "Binary Search", "parent_category": "LINEAR_DS"}},
+  {"model": "core.topic", "pk": 6, "fields": {"name": "Knapsack", "parent_category": "DP"}},
+
+  {
+    "model": "core.problem",
+    "pk": 1,
+    "fields": {
+      "title": "Longest Common Subsequence",
+      "source": "LEETCODE",
+      "url": "https://leetcode.com/problems/longest-common-subsequence/",
+      "statement": "Given two strings text1 and text2, return the length of their longest common subsequence.",
+      "difficulty_rating": 1200,
+      "status": "SOLVED",
+      "topics": [1],
+      "language": "cpp",
+      "code_submitted": "// dp[i][j] = LCS of text1[0:i], text2[0:j]",
+      "time_taken_minutes": 22,
+      "is_core_algorithm": true,
+      "created_at": "2026-06-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.problem",
+    "pk": 2,
+    "fields": {
+      "title": "Dijkstra? (Codeforces 20C)",
+      "source": "CODEFORCES",
+      "url": "https://codeforces.com/problemset/problem/20/C",
+      "statement": "Find the shortest path from vertex 1 to vertex n in a weighted graph.",
+      "difficulty_rating": 1900,
+      "status": "SOLVED",
+      "topics": [2],
+      "language": "cpp",
+      "code_submitted": "// priority_queue based dijkstra",
+      "time_taken_minutes": 35,
+      "is_core_algorithm": true,
+      "created_at": "2026-06-03T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.problem",
+    "pk": 3,
+    "fields": {
+      "title": "Number of Islands",
+      "source": "LEETCODE",
+      "url": "https://leetcode.com/problems/number-of-islands/",
+      "statement": "Given an m x n 2D binary grid, return the number of islands.",
+      "difficulty_rating": 1300,
+      "status": "SOLVED",
+      "topics": [3],
+      "language": "python",
+      "code_submitted": "# union-find or BFS flood fill",
+      "time_taken_minutes": 18,
+      "is_core_algorithm": false,
+      "created_at": "2026-06-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.problem",
+    "pk": 4,
+    "fields": {
+      "title": "Container With Most Water",
+      "source": "LEETCODE",
+      "url": "https://leetcode.com/problems/container-with-most-water/",
+      "statement": "Find two lines that together with the x-axis form a container holding the most water.",
+      "difficulty_rating": 1100,
+      "status": "PARTIAL",
+      "topics": [4],
+      "language": "cpp",
+      "code_submitted": "// two pointer approach, off by one bug on shrink condition",
+      "time_taken_minutes": 40,
+      "is_core_algorithm": false,
+      "created_at": "2026-06-06T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.problem",
+    "pk": 5,
+    "fields": {
+      "title": "Aggressive Cows (CodeChef AGGRCOW)",
+      "source": "CODECHEF",
+      "url": "https://www.codechef.com/problems/AGGRCOW",
+      "statement": "Place C cows into stalls to maximize the minimum distance between any two cows.",
+      "difficulty_rating": 1500,
+      "status": "SOLVED",
+      "topics": [5],
+      "language": "cpp",
+      "code_submitted": "// binary search on answer",
+      "time_taken_minutes": 28,
+      "is_core_algorithm": true,
+      "created_at": "2026-06-08T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.problem",
+    "pk": 6,
+    "fields": {
+      "title": "0/1 Knapsack",
+      "source": "OTHER",
+      "url": "",
+      "statement": "Given weights and values of n items, put items in a knapsack of capacity W to maximize value.",
+      "difficulty_rating": 1000,
+      "status": "SOLVED",
+      "topics": [6],
+      "language": "python",
+      "code_submitted": "# dp[i][w] classic knapsack table",
+      "time_taken_minutes": 15,
+      "is_core_algorithm": true,
+      "created_at": "2026-06-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.problem",
+    "pk": 7,
+    "fields": {
+      "title": "Word Break",
+      "source": "LEETCODE",
+      "url": "https://leetcode.com/problems/word-break/",
+      "statement": "Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of dictionary words.",
+      "difficulty_rating": 1400,
+      "status": "FAILED",
+      "topics": [1],
+      "language": "java",
+      "code_submitted": "// recursive without memoization, TLE",
+      "time_taken_minutes": 50,
+      "is_core_algorithm": false,
+      "created_at": "2026-06-12T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.problem",
+    "pk": 8,
+    "fields": {
+      "title": "Kruskal's MST (Codeforces 1245D)",
+      "source": "CODEFORCES",
+      "url": "https://codeforces.com/problemset/problem/1245/D",
+      "statement": "Build a minimum spanning tree with a twist on edge selection order.",
+      "difficulty_rating": 2100,
+      "status": "UNTRIED",
+      "topics": [3],
+      "language": "cpp",
+      "code_submitted": "",
+      "time_taken_minutes": null,
+      "is_core_algorithm": false,
+      "created_at": "2026-06-15T10:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.patterncard",
+    "pk": 1,
+    "fields": {
+      "problem": 1,
+      "pattern_name": "2D DP over two sequences",
+      "recognition_trigger": "Two strings/arrays being compared, asked for longest/shortest shared subsequence or edit distance.",
+      "core_insight": "dp[i][j] represents the best answer using the first i and j elements of each sequence; transitions compare text1[i-1] vs text2[j-1].",
+      "common_edge_cases": "Empty string inputs; all-matching or all-mismatching sequences; off-by-one indexing into the dp table.",
+      "llm_generated": true,
+      "created_at": "2026-06-01T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.patterncard",
+    "pk": 2,
+    "fields": {
+      "problem": 2,
+      "pattern_name": "Dijkstra shortest path",
+      "recognition_trigger": "Weighted graph, non-negative edge weights, need shortest path from a single source.",
+      "core_insight": "Greedily relax edges from the minimum-distance unvisited node using a min-heap priority queue.",
+      "common_edge_cases": "Disconnected graph nodes; duplicate edges with different weights; overflow on large distance sums.",
+      "llm_generated": true,
+      "created_at": "2026-06-03T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.patterncard",
+    "pk": 3,
+    "fields": {
+      "problem": 5,
+      "pattern_name": "Binary search on the answer",
+      "recognition_trigger": "Asked to maximize a minimum (or minimize a maximum) and the feasibility of a candidate answer can be checked in O(n) or O(n log n).",
+      "core_insight": "Binary search over the possible answer values, using a greedy feasibility check as the predicate.",
+      "common_edge_cases": "Search boundaries too tight/loose; off-by-one on final answer; feasibility check not monotonic if implemented incorrectly.",
+      "llm_generated": true,
+      "created_at": "2026-06-08T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.patterncard",
+    "pk": 4,
+    "fields": {
+      "problem": 6,
+      "pattern_name": "0/1 Knapsack DP",
+      "recognition_trigger": "Items with weight/value, capacity constraint, each item used at most once.",
+      "core_insight": "dp[w] = max value achievable with capacity w, iterating items outer loop and capacity inner loop in reverse to avoid reuse.",
+      "common_edge_cases": "Iterating capacity forward by mistake (allows reuse); capacity of 0; item weight exceeding capacity.",
+      "llm_generated": true,
+      "created_at": "2026-06-10T11:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.reviewlog",
+    "pk": 1,
+    "fields": {"pattern_card": 1, "review_date": "2026-06-20T09:00:00Z", "self_rating": 4, "next_review_date": "2026-06-27"}
+  },
+  {
+    "model": "core.reviewlog",
+    "pk": 2,
+    "fields": {"pattern_card": 2, "review_date": "2026-06-18T09:00:00Z", "self_rating": 2, "next_review_date": "2026-06-19"}
+  },
+  {
+    "model": "core.reviewlog",
+    "pk": 3,
+    "fields": {"pattern_card": 3, "review_date": "2026-06-15T09:00:00Z", "self_rating": 5, "next_review_date": "2026-06-29"}
+  },
+
+  {
+    "model": "core.postmortem",
+    "pk": 1,
+    "fields": {
+      "problem": 4,
+      "bug_found": "Loop terminated one iteration early, missing the optimal pair at the boundary.",
+      "root_cause": "Used < instead of <= in the while loop condition for the two-pointer shrink step.",
+      "lesson_learned": "Always trace through the boundary case (left == right - 1) by hand before submitting two-pointer solutions.",
+      "created_at": "2026-06-06T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.postmortem",
+    "pk": 2,
+    "fields": {
+      "problem": 7,
+      "bug_found": "Exponential blowup from re-solving overlapping subproblems.",
+      "root_cause": "Forgot to memoize the recursive wordBreak(s, start) calls.",
+      "lesson_learned": "Whenever recursion branches on multiple choices over an index, check for overlapping subproblems and add memoization by default.",
+      "created_at": "2026-06-12T12:00:00Z"
+    }
+  }
+]

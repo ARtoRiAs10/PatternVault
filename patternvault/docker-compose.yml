@@ -1,0 +1,78 @@
+x-judge0-service: &judge0-service
+  image: judge0/judge0:1.13.0
+  env_file: judge0.conf
+  privileged: true
+  restart: on-failure
+  depends_on:
+    - db
+    - redis
+
+services:
+  # ---------------------------------------------------------------------
+  # Django backend (PatternVault API)
+  # ---------------------------------------------------------------------
+  backend:
+    build:
+      context: ./backend
+    container_name: patternvault-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - judge0-server
+
+  # ---------------------------------------------------------------------
+  # React + Vite frontend dev server
+  # ---------------------------------------------------------------------
+  frontend:
+    build:
+      context: ./frontend
+    container_name: patternvault-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: npm run dev -- --host 0.0.0.0
+    depends_on:
+      - backend
+
+  # ---------------------------------------------------------------------
+  # Judge0 sandboxed code execution (official images/config)
+  # https://github.com/judge0/judge0
+  # ---------------------------------------------------------------------
+  judge0-server:
+    <<: *judge0-service
+    container_name: patternvault-judge0-server
+    ports:
+      - "2358:2358"
+
+  judge0-workers:
+    <<: *judge0-service
+    container_name: patternvault-judge0-workers
+    command: ["./scripts/workers"]
+
+  db:
+    image: postgres:16.2
+    container_name: patternvault-judge0-db
+    env_file: judge0.conf
+    volumes:
+      - judge0_db_data:/var/lib/postgresql/data/
+    restart: on-failure
+
+  redis:
+    image: redis:7.2.4
+    container_name: patternvault-judge0-redis
+    command: >
+      bash -c 'docker-entrypoint.sh --appendonly no --requirepass "$$REDIS_PASSWORD"'
+    env_file: judge0.conf
+    restart: on-failure
+
+volumes:
+  judge0_db_data:
