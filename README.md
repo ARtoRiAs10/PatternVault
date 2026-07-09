@@ -121,7 +121,7 @@ Visit **http://localhost:5173**. The Vite dev server proxies `/api/*` to
 
 ---
 
-## 8. Project structure
+## 6. Project structure
 
 ```
 patternvault/
